@@ -5,22 +5,12 @@ class UsersController < ApplicationController
   before_action :user_params, only: [:login]
   def login
     puts '--- LOGIN ---'
-    params.each do |i|
-      puts i
-    end
-    #
-    puts params[:username]
-    puts params[:password]
-    # #
-    puts username: params[:username]
-    puts password: params[:password] #= 'Linwood'
+    # params.each do |i|
+    #   puts i
+    # end
     puts user = User.find_by(username: params[:username])
-    user = User.find_by(username: params[:username])
-    if user && user.authenticate(params[:password])
-
-      puts user
-      puts user.id
-      puts user.username
+    user = User.find_by(username: params[:user][:username])
+    if user && user.authenticate(params[:user][:password])
 
       token = create_token(user.id, user.username)
       render json: {status: 200, token: token, user: user}
@@ -69,12 +59,10 @@ class UsersController < ApplicationController
 
   private
   def create_token(id, username)
-    puts '---- CREATE TOKEN ----'
     JWT.encode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
   end
   def payload(id, username)
   {
-    # exp: (1.day.from_now).to_i,
     exp: (Time.now + 30.minutes).to_i,
     iat: Time.now.to_i,
     iss: ENV['JWT_ISSUER'],

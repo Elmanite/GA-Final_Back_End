@@ -11,7 +11,9 @@
     color: 'brown',
     victory_points: 0,
     user_id: 1
-  ),
+  )
+end
+  1.times do
   User.create(
     username: 'Admin',
     password_digest: 'Admin',
