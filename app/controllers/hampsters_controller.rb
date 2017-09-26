@@ -10,15 +10,11 @@ class HampstersController < ApplicationController
 
   # GET /hampsters/1
   def show
-    puts '----- /blogs GET show ------'
-    # puts 'Current User.id = ' + get_current_user.id.to_s
-    # autorize current user by id
-    # if not a valid user will not come back
-    # for this render
+
     puts 'GET_CURRENT_USER.ID = ' + get_current_user.id.to_s
     authorize_user(get_current_user.id)
     @user_hampsters = User.find(params[:id]).hampsters
-    render json: @hampster
+    render json: @user_hampsters
   end
 
   # POST /hampsters

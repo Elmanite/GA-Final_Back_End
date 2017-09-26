@@ -80,3 +80,413 @@ Completed 200 OK in 53ms (Views: 14.5ms | ActiveRecord: 37.7ms)
   [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "num_of_hampsters", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Admin"], ["password_digest", "Admin"], ["num_of_hampsters", 1], ["created_at", "2017-09-24 18:43:25.397078"], ["updated_at", "2017-09-24 18:43:25.397078"]]
   [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (14.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (218.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hampster_heroes_app_api_development"[0m
+  [1m[35m (213.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hampster_heroes_app_api_test"[0m
+  [1m[35m (34.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(12155025656077290)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170921155124)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "num_of_hampsters" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170921155124"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHampsters (20170921155420)
+  [1m[35m (6.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "hampsters" ("id" bigserial primary key, "name" character varying, "color" character varying, "victory_points" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170921155420"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToHampster (20170921155728)
+  [1m[35m (11.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.6ms)[0m  [1m[35mALTER TABLE "hampsters" ADD "user_id" integer[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170921155728"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-25 14:22:50.044631"], ["updated_at", "2017-09-25 14:22:50.044631"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(12155025656077290)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "num_of_hampsters", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Admin"], ["password_digest", "Admin"], ["num_of_hampsters", 1], ["created_at", "2017-09-25 14:22:58.389147"], ["updated_at", "2017-09-25 14:22:58.389147"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:06:10 -0700
+  [1m[35m (7.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/hampsters_controller.rb:1:in `<top (required)>'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:06:15 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/hampsters_controller.rb:1:in `<top (required)>'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-25 20:06:23 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:06:36 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/hampsters_controller.rb:1:in `<top (required)>'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:07:36 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/hampsters_controller.rb:1:in `<top (required)>'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:07:55 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/hampsters_controller.rb:1:in `<top (required)>'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:08:26 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/hampsters_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-09-25 20:10:28 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ajmoser/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ajmoser/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-09-25 20:10:28 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2017-09-25 20:10:34 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started GET "/user/1" for 127.0.0.1 at 2017-09-25 20:10:42 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user" for 127.0.0.1 at 2017-09-25 20:10:48 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/User" for 127.0.0.1 at 2017-09-25 20:11:03 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/User"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2017-09-25 20:11:07 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started GET "/user/1" for 127.0.0.1 at 2017-09-25 20:11:14 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/User/1" for 127.0.0.1 at 2017-09-25 20:11:20 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/User/1"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:12:35 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/hampsters_controller.rb:1:in `<top (required)>'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/users/login" for 127.0.0.1 at 2017-09-25 20:13:48 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:14:44 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/hampsters_controller.rb:1:in `<top (required)>'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-25 20:14:55 -0700
+  
+SyntaxError (/Users/ajmoser/dev/GA-Final-Project/backend/hampster_heroes_app_api/app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:19:23 -0700
+Processing by HampstersController#index as HTML
+  [1m[36mHampster Load (3.2ms)[0m  [1m[34mSELECT "hampsters".* FROM "hampsters"[0m
+Completed 200 OK in 16ms (Views: 2.3ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-25 20:19:30 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"Admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Admin"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 5.4ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:13:in `login'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:19:47 -0700
+Processing by HampstersController#index as HTML
+  [1m[36mHampster Load (0.4ms)[0m  [1m[34mSELECT "hampsters".* FROM "hampsters"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-25 20:19:52 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"Admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Admin"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.9ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:13:in `login'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:20:49 -0700
+Processing by HampstersController#index as HTML
+  [1m[36mHampster Load (0.6ms)[0m  [1m[34mSELECT "hampsters".* FROM "hampsters"[0m
+Completed 200 OK in 13ms (Views: 2.5ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-25 20:21:01 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"Admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Admin"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 5.8ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:13:in `login'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:46:13 -0700
+Processing by HampstersController#index as HTML
+  [1m[36mHampster Load (0.9ms)[0m  [1m[34mSELECT "hampsters".* FROM "hampsters"[0m
+Completed 200 OK in 26ms (Views: 17.6ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-25 20:46:19 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"Admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Admin"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 4.2ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:18:in `login'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:46:29 -0700
+Processing by HampstersController#index as HTML
+  [1m[36mHampster Load (0.4ms)[0m  [1m[34mSELECT "hampsters".* FROM "hampsters"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-25 20:46:36 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"Admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Admin"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:18:in `login'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:48:10 -0700
+Processing by HampstersController#index as HTML
+  [1m[36mHampster Load (1.6ms)[0m  [1m[34mSELECT "hampsters".* FROM "hampsters"[0m
+Completed 200 OK in 14ms (Views: 2.7ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-25 20:48:18 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"Admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Admin"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 3.1ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:18:in `login'
+Started GET "/hampsters" for 127.0.0.1 at 2017-09-25 20:51:15 -0700
+Processing by HampstersController#index as HTML
+  [1m[36mHampster Load (0.3ms)[0m  [1m[34mSELECT "hampsters".* FROM "hampsters"[0m
+Completed 200 OK in 8ms (Views: 2.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-25 20:51:33 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"Admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Admin"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 5.5ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/users_controller.rb:18:in `login'

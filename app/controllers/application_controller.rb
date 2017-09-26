@@ -13,8 +13,8 @@ class ApplicationController < ActionController::API
   end
   def decode_token(token_input)
     puts "DECODE TOKEN, token input: #{token_input}"
-    puts token = JWT.decode(token_input, ENV['JWT_SECRET'], true)
-    JWT.decode(token_input, ENV['JWT_SECRET'], true)
+    puts token = JWT.decode(token_input, ENV['JWT_SECRET'], true, {:algorithm => 'HS256'})
+    JWT.decode(token_input, ENV['JWT_SECRET'], true, {:algorithm => 'HS256'})
   rescue
     render json: { status: 401, message: 'Unauthorized-Login'}
   end
@@ -22,4 +22,21 @@ class ApplicationController < ActionController::API
     return if !bearer_token
     decoded_jwt = decode_token(bearer_token)
     User.find(decoded_jwt[0]["user"]["id"])
+  end
+  def show
+    puts "APPLICATION CONTROLLER SHOW ROUTE"
+    render json: get_current_user
+  end
+  def authorize_user
+    puts "AUTHORIZE USER"
+    puts "username: #{get_current_user.username}"
+    puts "params: #{params[:id]}"
+    render json: { status: 401, message: 'Unauthorized' } unless get_current_user.id == params[:id].to_i
+  end
+  def authorize_user(id)
+    puts "AUTHORIZE USER"
+    puts "user id: #{get_current_user.id}"
+    puts "params: #{params[:id]}"
+    render json: { status: 401, message: 'Unauthorized' } unless get_current_user.id == id.to_i
+  end
 end

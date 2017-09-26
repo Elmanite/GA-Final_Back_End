@@ -5,13 +5,20 @@ class UsersController < ApplicationController
   before_action :user_params, only: [:login]
   def login
     puts '--- LOGIN ---'
-    # params.each do |i|
-    #   puts i
-    # end
+    params.each do |i|
+      puts i
+    end
+
+    puts params[:username]
+    puts params[:password]
+    puts username: params[:username]
+    puts password: params[:password]
     puts user = User.find_by(username: params[:username])
     user = User.find_by(username: params[:user][:username])
     if user && user.authenticate(params[:user][:password])
-
+      puts user
+      puts user.id
+      puts user.username
       token = create_token(user.id, user.username)
       render json: {status: 200, token: token, user: user}
     else
@@ -21,7 +28,6 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-
     render json: @users
   end
 
