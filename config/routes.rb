@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :hampsters, only: [:index, :show, :create, :update, :destroy]
-  resources :users, only:     [:index, :show, :create] do
+  resources :users, only: [:index, :show, :create] do
+    resources :hamsters, only: [:index, :show, :create, :update, :destroy]
     collection do
       post '/login', to: 'users#login'
     end

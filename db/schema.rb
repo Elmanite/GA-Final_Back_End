@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170921155728) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "hampsters", force: :cascade do |t|
+  create_table "hamsters", force: :cascade do |t|
     t.string "name"
     t.string "color"
     t.integer "victory_points"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170921155728) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.integer "num_of_hampsters"
+    t.integer "num_of_hamsters"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

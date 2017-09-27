@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 1.times do
-  Hampster.create(
+  Hamster.create(
     name: 'Brownie',
     color: 'brown',
     victory_points: 0,
@@ -17,6 +17,6 @@ end
   User.create(
     username: 'Admin',
     password_digest: 'Admin',
-    num_of_hampsters: '1'
+    num_of_hamsters: '1'
   )
 end

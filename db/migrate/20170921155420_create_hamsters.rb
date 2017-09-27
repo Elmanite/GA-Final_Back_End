@@ -1,6 +1,6 @@
-class CreateHampsters < ActiveRecord::Migration[5.1]
+class CreateHamsters < ActiveRecord::Migration[5.1]
   def change
-    create_table :hampsters do |t|
+    create_table :hamsters do |t|
       t.string :name
       t.string :color
       t.integer :victory_points

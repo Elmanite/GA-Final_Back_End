@@ -7,4 +7,4 @@ test:
 production:
   adapter: redis
   url: redis://localhost:6379/1
-  channel_prefix: hampster_heroes_app_api_production
+  channel_prefix: hamster_heroes_app_api_production

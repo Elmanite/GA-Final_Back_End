@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class HampsterTest < ActiveSupport::TestCase
+class HamsterTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
