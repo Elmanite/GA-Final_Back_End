@@ -21,8 +21,6 @@ class HamstersController < ApplicationController
     puts '------Creating new hamster-------- '
     @hamster = Hamster.new(hamster_params)
     @hamster.user_id = params[:user_id]
-    puts "---was hampster created?--------------"
-
     if @hamster.save
       render json: @hamster, status: :created
     else
@@ -33,9 +31,6 @@ class HamstersController < ApplicationController
   # PATCH/PUT /hamsters/1
   def update
     puts '---- PUT /hamsters/:id update ---'
-    puts 'The passed parameters are: ' + hamster_params.to_s
-    puts '@hamster = ' + @hamster.to_s
-    @hamster = Hamster.find(params[:id])
     if @hamster.update(hamster_params)
       render json: @hamster
     else
@@ -59,6 +54,6 @@ class HamstersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def hamster_params
-      params.require(:hamster).permit(:name, :color, :victory_points)
+      params.require(:hamster).permit(:name, :color)
     end
 end

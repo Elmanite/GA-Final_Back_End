@@ -4690,3 +4690,1071 @@ Processing by HamstersController#index as HTML
 Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-09-27 15:01:21 -0700
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ajmoser/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ajmoser/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (8.5ms)
+Completed 200 OK in 27ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-09-27 15:01:22 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 15:01:44 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (11.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 128ms (Views: 0.8ms | ActiveRecord: 50.1ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 15:01:47 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (8.2ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 31ms (Views: 9.3ms | ActiveRecord: 11.4ms)
+
+
+Started PUT "/users/2/hamsters/undefined" for 127.0.0.1 at 2017-09-27 15:01:56 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"undefined", "hamster"=>{}}
+  [1m[36mHamster Load (1.4ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Hamster with 'id'=undefined):
+  
+app/controllers/hamsters_controller.rb:57:in `set_hamster'
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 15:02:03 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 15:32:17 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 15:32:20 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/2/hamsters/undefined" for 127.0.0.1 at 2017-09-27 15:32:31 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"undefined", "hamster"=>{}}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Hamster with 'id'=undefined):
+  
+app/controllers/hamsters_controller.rb:57:in `set_hamster'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 15:32:59 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 15:33:01 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.6ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/users/2/hamsters/undefined" for 127.0.0.1 at 2017-09-27 15:33:22 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"undefined", "hamster"=>{}}
+  [1m[36mHamster Load (0.2ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Hamster with 'id'=undefined):
+  
+app/controllers/hamsters_controller.rb:57:in `set_hamster'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 15:35:31 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 15:35:32 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 15:35:44 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10", "hamster"=>{}}
+  [1m[36mHamster Load (0.6ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:62:in `hamster_params'
+app/controllers/hamsters_controller.rb:36:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 15:39:14 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 0.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 15:39:19 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 19ms (Views: 11.1ms | ActiveRecord: 5.1ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 15:39:25 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10", "hamster"=>{}}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:62:in `hamster_params'
+app/controllers/hamsters_controller.rb:39:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 15:40:29 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 107ms (Views: 0.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 15:40:30 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 22ms (Views: 14.9ms | ActiveRecord: 4.5ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 15:40:43 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10", "hamster"=>{}}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:63:in `hamster_params'
+app/controllers/hamsters_controller.rb:40:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 15:47:30 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 15:47:33 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (1.0ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 15:47:39 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:63:in `hamster_params'
+app/controllers/hamsters_controller.rb:40:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 16:08:26 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:08:28 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (1.1ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/users/2/hamsters/[object%20Object]" for 127.0.0.1 at 2017-09-27 16:08:34 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"[object Object]"}
+  [1m[36mHamster Load (0.2ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Hamster with 'id'=[object Object]):
+  
+app/controllers/hamsters_controller.rb:58:in `set_hamster'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 16:09:58 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:10:00 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/2/hamsters/[object%20Object]" for 127.0.0.1 at 2017-09-27 16:10:05 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"[object Object]"}
+  [1m[36mHamster Load (0.2ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Hamster with 'id'=[object Object]):
+  
+app/controllers/hamsters_controller.rb:58:in `set_hamster'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 16:11:46 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 2.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:11:47 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 16:11:58 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (2.6ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 11ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:63:in `hamster_params'
+app/controllers/hamsters_controller.rb:40:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 16:15:35 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:15:36 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 16:15:43 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (0.8ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:63:in `hamster_params'
+app/controllers/hamsters_controller.rb:40:in `update'
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:22:42 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 16:22:48 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:22:49 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/2/hamsters/undefined" for 127.0.0.1 at 2017-09-27 16:22:54 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"undefined"}
+  [1m[36mHamster Load (0.5ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Hamster with 'id'=undefined):
+  
+app/controllers/hamsters_controller.rb:58:in `set_hamster'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 16:23:20 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:23:22 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 16:23:54 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:23:56 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 16:24:26 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:24:28 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/2/hamsters/undefined" for 127.0.0.1 at 2017-09-27 16:24:30 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"undefined"}
+  [1m[36mHamster Load (0.1ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Hamster with 'id'=undefined):
+  
+app/controllers/hamsters_controller.rb:58:in `set_hamster'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 16:35:06 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:35:08 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (1.5ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.5ms)
+
+
+Started PUT "/users/2/hamsters/" for 127.0.0.1 at 2017-09-27 16:35:10 -0700
+  
+ActionController::RoutingError (No route matches [PUT] "/users/2/hamsters"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 16:45:51 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 0.7ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 16:45:53 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.5ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 24ms (Views: 12.7ms | ActiveRecord: 3.8ms)
+
+
+Started PUT "/users/2/hamsters/undefined" for 127.0.0.1 at 2017-09-27 16:45:56 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"undefined"}
+  [1m[36mHamster Load (0.5ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Hamster with 'id'=undefined):
+  
+app/controllers/hamsters_controller.rb:59:in `set_hamster'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:05:11 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:05:12 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (1.5ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.5ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:05:16 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (4.5ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 8ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:64:in `hamster_params'
+app/controllers/hamsters_controller.rb:41:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:06:41 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:06:43 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:06:47 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:64:in `hamster_params'
+app/controllers/hamsters_controller.rb:41:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:08:32 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:08:34 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:08:38 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (0.5ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:64:in `hamster_params'
+app/controllers/hamsters_controller.rb:41:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:10:17 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:10:18 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:10:21 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (1.1ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 5ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:64:in `hamster_params'
+app/controllers/hamsters_controller.rb:41:in `update'
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:17:14 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 25ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:65:in `hamster_params'
+app/controllers/hamsters_controller.rb:42:in `update'
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:18:34 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (0.2ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 19ms (ActiveRecord: 6.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:65:in `hamster_params'
+app/controllers/hamsters_controller.rb:42:in `update'
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:18:53 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.1ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 24ms (ActiveRecord: 6.1ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:65:in `hamster_params'
+app/controllers/hamsters_controller.rb:42:in `update'
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:19:13 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (0.2ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 20ms (ActiveRecord: 4.2ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:65:in `hamster_params'
+app/controllers/hamsters_controller.rb:42:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:21:09 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 0.7ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:21:10 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.2ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 17ms (Views: 9.5ms | ActiveRecord: 5.5ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:21:14 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (1.8ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 5ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:59:in `hamster_params'
+app/controllers/hamsters_controller.rb:36:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:23:10 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 0.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:23:11 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 19ms (Views: 10.1ms | ActiveRecord: 2.6ms)
+
+
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:23:14 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:59:in `hamster_params'
+app/controllers/hamsters_controller.rb:36:in `update'
+Started PUT "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:23:22 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:59:in `hamster_params'
+app/controllers/hamsters_controller.rb:36:in `update'
+Started POST "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:36:28 -0700
+Processing by HamstersController#create as HTML
+  Parameters: {"name"=>"Beef", "color"=>"Brown", "user_id"=>"2", "hamster"=>{"name"=>"Beef", "color"=>"Brown"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (31.4ms)[0m  [1m[32mINSERT INTO "hamsters" ("name", "color", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Beef"], ["color", "Brown"], ["created_at", "2017-09-28 00:36:28.898797"], ["updated_at", "2017-09-28 00:36:28.898797"], ["user_id", 2]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 73ms (Views: 0.5ms | ActiveRecord: 37.1ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:38:09 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:38:11 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:43:03 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:43:04 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:44:03 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:44:04 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:44:38 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:44:40 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (1.2ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:45:08 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:45:09 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (2.7ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:46:12 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:46:14 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:46:57 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 1.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:46:58 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/2/hamsters/undefined" for 127.0.0.1 at 2017-09-27 17:47:01 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"undefined"}
+  [1m[36mHamster Load (0.5ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Hamster with 'id'=undefined):
+  
+app/controllers/hamsters_controller.rb:54:in `set_hamster'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:47:54 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 80ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:47:55 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.6ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/2/hamsters/10" for 127.0.0.1 at 2017-09-27 17:47:59 -0700
+Processing by HamstersController#destroy as HTML
+  Parameters: {"user_id"=>"2", "id"=>"10"}
+  [1m[36mHamster Load (2.5ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.1ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[31mDELETE FROM "hamsters" WHERE "hamsters"."id" = $1[0m  [["id", 10]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 14ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:47:59 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/2/hamsters/11" for 127.0.0.1 at 2017-09-27 17:48:04 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"11"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:59:in `hamster_params'
+app/controllers/hamsters_controller.rb:36:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:48:25 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:48:27 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (1.0ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/users/2/hamsters/11" for 127.0.0.1 at 2017-09-27 17:48:30 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"11"}
+  [1m[36mHamster Load (1.4ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 400 Bad Request in 6ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:59:in `hamster_params'
+app/controllers/hamsters_controller.rb:36:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 17:51:19 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 0.9ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:51:22 -0700
+Processing by HamstersController#create as HTML
+  Parameters: {"name"=>"wer", "color"=>"wer", "user_id"=>"2", "hamster"=>{"name"=>"wer", "color"=>"wer"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "hamsters" ("name", "color", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "wer"], ["color", "wer"], ["created_at", "2017-09-28 00:51:22.830120"], ["updated_at", "2017-09-28 00:51:22.830120"], ["user_id", 2]]
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 28ms (Views: 1.7ms | ActiveRecord: 9.2ms)
+
+
+Started POST "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 17:59:35 -0700
+Processing by HamstersController#create as HTML
+  Parameters: {"name"=>"ver", "color"=>"ver", "user_id"=>"2", "hamster"=>{"name"=>"ver", "color"=>"ver"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "hamsters" ("name", "color", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ver"], ["color", "ver"], ["created_at", "2017-09-28 00:59:35.124142"], ["updated_at", "2017-09-28 00:59:35.124142"], ["user_id", 2]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 47ms (Views: 0.4ms | ActiveRecord: 16.1ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 18:02:15 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 1.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 18:02:16 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 32ms (Views: 21.8ms | ActiveRecord: 6.0ms)
+
+
+Started DELETE "/users/2/hamsters/11" for 127.0.0.1 at 2017-09-27 18:02:19 -0700
+Processing by HamstersController#destroy as HTML
+  Parameters: {"user_id"=>"2", "id"=>"11"}
+  [1m[36mHamster Load (0.6ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "hamsters" WHERE "hamsters"."id" = $1[0m  [["id", 11]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 12ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 18:02:19 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/2/hamsters/12" for 127.0.0.1 at 2017-09-27 18:02:20 -0700
+Processing by HamstersController#destroy as HTML
+  Parameters: {"user_id"=>"2", "id"=>"12"}
+  [1m[36mHamster Load (0.2ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Hamster Load (0.0ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "hamsters" WHERE "hamsters"."id" = $1[0m  [["id", 12]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 6ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 18:02:20 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.5ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users/2/hamsters/13" for 127.0.0.1 at 2017-09-27 18:02:25 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"13"}
+  [1m[36mHamster Load (1.9ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 400 Bad Request in 11ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:59:in `hamster_params'
+app/controllers/hamsters_controller.rb:34:in `update'
+Started PUT "/users/2/hamsters/13" for 127.0.0.1 at 2017-09-27 18:06:55 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"13"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 400 Bad Request in 26ms (ActiveRecord: 4.9ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:57:in `hamster_params'
+app/controllers/hamsters_controller.rb:34:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 18:07:03 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 0.5ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 18:07:04 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.3ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/2/hamsters/13" for 127.0.0.1 at 2017-09-27 18:07:08 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"13"}
+  [1m[36mHamster Load (0.2ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:57:in `hamster_params'
+app/controllers/hamsters_controller.rb:34:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 18:08:42 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 18:08:43 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/2/hamsters/13" for 127.0.0.1 at 2017-09-27 18:08:53 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"user_id"=>"2", "id"=>"13"}
+  [1m[36mHamster Load (0.8ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: hamster):
+  
+app/controllers/hamsters_controller.rb:57:in `hamster_params'
+app/controllers/hamsters_controller.rb:34:in `update'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-27 18:11:25 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"AJ", "password"=>"[FILTERED]", "user"=>{"username"=>"AJ"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/hamsters" for 127.0.0.1 at 2017-09-27 18:11:26 -0700
+Processing by HamstersController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mHamster Load (0.6ms)[0m  [1m[34mSELECT "hamsters".* FROM "hamsters"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/users/2/hamsters/13" for 127.0.0.1 at 2017-09-27 18:11:34 -0700
+Processing by HamstersController#update as HTML
+  Parameters: {"hamster"=>{"name"=>"vero", "color"=>"vero", "victory_points"=>"0"}, "user_id"=>"2", "id"=>"13"}
+  [1m[36mHamster Load (0.4ms)[0m  [1m[34mSELECT  "hamsters".* FROM "hamsters" WHERE "hamsters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Unpermitted parameter: :victory_points
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (7.6ms)[0m  [1m[33mUPDATE "hamsters" SET "name" = $1, "color" = $2, "updated_at" = $3 WHERE "hamsters"."id" = $4[0m  [["name", "vero"], ["color", "vero"], ["updated_at", "2017-09-28 01:11:34.346469"], ["id", 13]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 10.4ms)
+
+
